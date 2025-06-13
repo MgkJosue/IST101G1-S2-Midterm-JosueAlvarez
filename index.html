@@ -28,7 +28,15 @@
 </head>
 
 <body>
+  <!--My info and the Public Ip -->
+  <div class="my-info">
+    <p><strong>My EC2 Instance Public IP:</strong> <span id="ec2-ip">Loading...</span></p>
+    <p><strong>Student Name:</strong> Josue Alvarez</p>
+    <p><strong>Date:</strong> June 12, 2025</p>
+  </div>
+
   <h1 id="title">MidTerm Exam - DevOps Infrastructure Level 1</h1>
+  <h2 id="server-ip">this is the ip of my server</h2>
 
   <div class="container">
     <!-- Left Panel -->
@@ -71,6 +79,18 @@
     </div>
   </footer>
 
+  <!-- Script for the Public Ip -->
+  <script>
+    fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('ec2-ip').textContent = data.ip;
+      })
+      .catch(error => {
+        document.getElementById('ec2-ip').textContent = 'Unable to load IP.';
+        console.error('Error fetching public IP:', error);
+      });
+  </script>
 
   <script src="script.js"></script>
 </body>

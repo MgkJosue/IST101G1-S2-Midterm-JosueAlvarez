@@ -187,3 +187,10 @@ footer strong {
   text-align: center;
   margin: 0 0 5px;
 }
+
+.my-info {
+  text-align: center;
+  padding: 10px;
+  background-color: #c86e6e;
+  color: black;
+}
